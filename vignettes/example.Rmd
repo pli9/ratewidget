@@ -1,5 +1,5 @@
 ---
-title: "ratewidget"
+title: "Example ratewidget use case"
 ---
 
 ```{r setup, include=FALSE}
