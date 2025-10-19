@@ -3,7 +3,7 @@ pkgdown: 2.1.3
 pkgdown_sha: ~
 articles:
   example: example.html
-last_built: 2025-10-19T02:00Z
+last_built: 2025-10-19T03:21Z
 urls:
   reference: https://pli9.github.io/ratewidget/reference
   article: https://pli9.github.io/ratewidget/articles
