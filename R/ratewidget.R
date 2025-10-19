@@ -14,6 +14,7 @@
 #' 100, to express as a percentage).
 #' @param digits The number of decimal places to round the result to (default is
 #' 0).
+#' @param suffix An optional suffix to append to the displayed value (e.g., "%").
 #' @param width The width of the widget (optional).
 #' @param height The height of the widget (optional).
 #' @param elementId An optional element ID for the widget.
@@ -22,7 +23,7 @@
 #' @import htmlwidgets
 #'
 #' @export
-ratewidget <- function(data, numerator, denominator, multiplier = 100, digits = 0, width = NULL, height = NULL, elementId = NULL) {
+ratewidget <- function(data, numerator, denominator, multiplier = 100, digits = 0, suffix = NULL, width = NULL, height = NULL, elementId = NULL) {
 
   if (is.SharedData(data)) {
     # Using Crosstalk
@@ -52,6 +53,7 @@ ratewidget <- function(data, numerator, denominator, multiplier = 100, digits = 
     settings = list(
       multiplier = multiplier,
       digits = digits,
+      suffix = ifelse(is.null(suffix), "", suffix),
       crosstalk_key = key,
       crosstalk_group = group
     )

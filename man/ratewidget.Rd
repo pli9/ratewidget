@@ -10,6 +10,7 @@ ratewidget(
   denominator,
   multiplier = 100,
   digits = 0,
+  suffix = NULL,
   width = NULL,
   height = NULL,
   elementId = NULL
@@ -31,6 +32,8 @@ denominator.}
 \item{digits}{The number of decimal places to round the result to (default is
 0).}
 
+\item{suffix}{An optional suffix to append to the displayed value (e.g., "\%").}
+
 \item{width}{The width of the widget (optional).}
 
 \item{height}{The height of the widget (optional).}
@@ -39,6 +42,6 @@ denominator.}
 }
 \description{
 A \code{ratewidget} displays a single statistic derived from a linked table, where
-the numerator and denominator columns are specific. This is best used with ]
+the numerator and denominator columns are specific. This is best used with
 the \code{crosstalk}package, to allow dynamic filtering of the underlying data.
 }

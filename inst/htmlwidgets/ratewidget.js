@@ -72,7 +72,7 @@ HTMLWidgets.widget({
           var prop = value_num / value_den * x.settings.multiplier;
 
           if (x.settings.digits !== null) prop = prop.toFixed(x.settings.digits);
-          el.innerText = prop;
+          el.innerText = prop + x.settings.suffix;
         };
 
        // Set up to receive crosstalk filter and selection events
