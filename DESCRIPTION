@@ -1,0 +1,21 @@
+Package: ratewidget
+Title: Display rates from the numerator and denominator in linked data
+Version: 0.0.0.9000
+Authors@R: person("Peter", "Li", email = "temp@gmail.com", role = c("aut", "cre"))
+Description: What the package does (one paragraph).
+URL: https://github.com/pli9/ratewidget
+BugReports: https://github.com/pli9/ratewidget/issues
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.3
+Imports:
+  crosstalk,
+  htmltools,
+  htmlwidgets
+Suggests: 
+  knitr,
+  rmarkdown,
+  DT
+VignetteBuilder: knitr

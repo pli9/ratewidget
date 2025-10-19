@@ -1,0 +1,37 @@
+---
+title: "ratewidget"
+---
+
+```{r setup, include=FALSE}
+library(crosstalk)
+library(DT)
+library(ratewidget)
+
+shared_mtcars = SharedData$new(mtcars[,c("cyl", "disp", "hp", "wt", "qsec", "vs", "am")])
+```
+
+ratewidget is an [HTML widget](http://www.htmlwidgets.org) which works with
+[Crosstalk](https://rstudio.github.io/crosstalk/index.html) to calculate and display a rate between the numerator and denominator columns. This rate updates when the crosstalk brushing or filtering is applied.
+
+Try the example below. Click the checkboxes, manipulate the slider and
+click rows in the data table. Watch the rate update as the data selection changes.
+The summary text uses four `ratewidget` instances to show four different summary statistics. 
+
+-----
+
+<big> The weighted average power to weight ratio is
+**`r ratewidget(shared_mtcars, numerator = "hp", denominator = "wt", multiplier=0.001, digits=3)`** hp/lb.</big>
+
+
+```{r example, echo=FALSE}
+bscols(widths = c(3,NA),
+  list(
+    filter_checkbox("cyl", "Cylinders", shared_mtcars, ~cyl, inline = TRUE),
+    filter_slider("disp", "Horsepower", shared_mtcars, ~hp, width = "100%"),
+    filter_checkbox("vs", "Engine (0 = V-shaped, 1 = straight)", shared_mtcars, ~vs, inline = TRUE),
+    filter_checkbox("am", "Transmission (0 = automatic, 1 = manual)", shared_mtcars, ~am, inline = TRUE)
+  ),
+  datatable(shared_mtcars, width=600, height=300, 
+            options=list(pageLength=5, dom='tp'))
+)
+```
