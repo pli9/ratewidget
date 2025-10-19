@@ -1,7 +1,7 @@
 #' Show the summary proportion in a widget
 #'
 #' A `ratewidget` displays a single statistic derived from a linked table, where
-#' the numerator and denominator columns are specific. This is best used with ]
+#' the numerator and denominator columns are specific. This is best used with
 #' the `crosstalk`package, to allow dynamic filtering of the underlying data.
 #'
 #' @param data A data frame or data table containing the data to summarize,
